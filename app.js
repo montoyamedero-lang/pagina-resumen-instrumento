@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async function () {
 
-  // =========================================================
+  // =========================================================F
   // 1. OBTENER EL TOKEN DE LA DIRECCIÓN DE LA PÁGINA
   // =========================================================
   const parametros = new URLSearchParams(window.location.search);
@@ -216,24 +216,54 @@ function rellenarTarjeta(
     titulo.textContent = nombreLinea;
   }
 
-  if (marcoImagen) {
+if (marcoImagen) {
+  marcoImagen.innerHTML = "";
 
-    marcoImagen.innerHTML = "";
+  const urlsImagenes = {
+    "1": "https://images.typeform.com/images/NKKBGwJyNmQu",
+    "2": "https://images.typeform.com/images/GTzxDuqQlWjG",
+    "3": "https://images.typeform.com/images/eFLgOczjSIlI",
+    "4": "https://images.typeform.com/images/aqNBZXIoIwRA",
+    "5": "https://images.typeform.com/images/KovQTLxZernJ",
+    "6": "https://images.typeform.com/images/mRkeMDjhzZZo"
+  };
 
-    const textoImagen =
-      document.createElement("p");
+  const numeroImagen = String(opcionImagen || "").match(/\d+/)?.[0];
+  const urlImagen = urlsImagenes[numeroImagen];
 
-    textoImagen.textContent =
-      opcionImagen || "Imagen no disponible";
-
-    marcoImagen.appendChild(textoImagen);
+  if (urlImagen) {
+    const imagen = document.createElement("img");
+    imagen.src = urlImagen;
+    imagen.alt = nombreLinea || "Imagen seleccionada";
+    marcoImagen.appendChild(imagen);
+  } else {
+    marcoImagen.textContent = "Imagen no disponible";
   }
+} 
+ if (emoticono) {
+  emoticono.innerHTML = "";
 
-  if (emoticono) {
+  const urlsEmoticonos = {
+    "1": "https://images.typeform.com/images/PhIKJcbiciAZ",
+    "2": "https://images.typeform.com/images/wVoUexgkRSui",
+    "3": "https://images.typeform.com/images/YzFFpiHLUiZP",
+    "4": "https://images.typeform.com/images/pZLbbvqDwoEI",
+    "5": "https://images.typeform.com/images/WCTUPEUYYazT",
+    "6": "https://images.typeform.com/images/wKcsLIYyVViA"
+  };
 
-    emoticono.textContent =
-      opcionEmoticon || "—";
+  const numeroEmoticon = String(opcionEmoticon || "").match(/\d+/)?.[0];
+  const urlEmoticon = urlsEmoticonos[numeroEmoticon];
+
+  if (urlEmoticon) {
+    const imagenEmoticon = document.createElement("img");
+    imagenEmoticon.src = urlEmoticon;
+    imagenEmoticon.alt = "Emoticon seleccionado";
+    emoticono.appendChild(imagenEmoticon);
+  } else {
+    emoticono.textContent = "—";
   }
+}
 }
 
 
