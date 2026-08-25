@@ -201,3 +201,11 @@ body {
     height: 220px;
   }
 }
+.marco-imagen img,
+.emoticono img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 220px;
+  object-fit: contain;
+}
