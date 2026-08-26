@@ -209,3 +209,21 @@ body {
   height: 220px;
   object-fit: contain;
 }
+
+.tarjeta .marco-imagen img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 220px !important;
+  object-fit: contain !important;
+  margin: 0 auto !important;
+}
+
+.tarjeta .emoticono img {
+  display: block !important;
+  width: 96px !important;
+  max-width: 96px !important;
+  height: 96px !important;
+  object-fit: contain !important;
+  margin: 0 auto !important;
+}
