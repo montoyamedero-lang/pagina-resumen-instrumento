@@ -338,7 +338,7 @@ const nombreLinea = titulos[indice]?.textContent?.trim();
       resultado.style.background = "#eff6ff";
       resultado.style.border = "2px solid #2563eb";
       resultado.style.borderRadius = "16px";
-      resultado.style.textAlign = "center";
+      resultado.style.textAlign = "center"; 
       resultado.style.fontSize = "22px";
       resultado.style.fontWeight = "700";
       resultado.style.lineHeight = "1.5";
@@ -347,12 +347,12 @@ const nombreLinea = titulos[indice]?.textContent?.trim();
     }
 
     resultado.textContent =
-      "La línea de investigación con la que tienes todas tus inteligencias estan a su favor es: " +
+      "Las inteligencias utilizadas estan a favor de: " +
       nombreLinea;
 
     resultado.scrollIntoView({
       behavior: "smooth",
       block: "center"
-    });
+     
   });
 });
