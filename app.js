@@ -288,53 +288,7 @@ function normalizar(texto) {
 function mostrarError(mensaje) {
 
   console.error(mensaje);
-// ===========================================================
-// ELECCIÓN FINAL DE LA LÍNEA
-// ===========================================================
 
-document.querySelectorAll(".boton-eleccion").forEach(function (boton) {
-
-  boton.addEventListener("click", function () {
-
-    const tarjeta = boton.closest(".tarjeta");
-    const titulo = tarjeta?.querySelector(".titulo-linea");
-    const nombreLinea = titulo?.textContent?.trim();
-
-    if (!nombreLinea) {
-      mostrarError("No se pudo identificar el nombre de la línea seleccionada.");
-      return;
-    }
-
-    let resultado = document.getElementById("resultado-eleccion");
-
-    if (!resultado) {
-      resultado = document.createElement("div");
-      resultado.id = "resultado-eleccion";
-
-      resultado.style.maxWidth = "900px";
-      resultado.style.margin = "35px auto";
-      resultado.style.padding = "24px";
-      resultado.style.background = "#eff6ff";
-      resultado.style.border = "2px solid #2563eb";
-      resultado.style.borderRadius = "16px";
-      resultado.style.textAlign = "center";
-      resultado.style.fontSize = "22px";
-      resultado.style.fontWeight = "700";
-      resultado.style.lineHeight = "1.5";
-
-      document.body.appendChild(resultado);
-    }
-
-    resultado.textContent =
-      "La línea de investigación con la que tienes todas tus inteligencias estan a su favor es: " +
-      nombreLinea;
-
-    resultado.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-  });
-});
   let aviso =
     document.getElementById("mensaje-app");
 
