@@ -227,3 +227,21 @@ body {
   object-fit: contain !important;
   margin: 0 auto !important;
 }
+/* BOTONES DE ELECCIÓN FINAL */
+.boton-eleccion {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  margin: 8px 6px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.20);
+}
+
+.boton-eleccion:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
