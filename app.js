@@ -317,9 +317,9 @@ document.querySelectorAll(".boton-eleccion").forEach(function (boton) {
 
   boton.addEventListener("click", function () {
 
-    const tarjeta = boton.closest(".tarjeta");
-    const titulo = tarjeta?.querySelector(".titulo-linea");
-    const nombreLinea = titulo?.textContent?.trim();
+    const indice = Array.from(document.querySelectorAll(".boton-eleccion")).indexOf(boton);
+const titulos = document.querySelectorAll("h2");
+const nombreLinea = titulos[indice]?.textContent?.trim();
 
     if (!nombreLinea) {
       mostrarError("No se pudo identificar el nombre de la línea seleccionada.");
