@@ -356,3 +356,4 @@ const nombreLinea = titulos[indice]?.textContent?.trim();
      
   });
 });
+}
