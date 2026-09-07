@@ -350,6 +350,17 @@ const nombreLinea = titulos[indice]?.textContent?.trim();
       "Las inteligencias utilizadas estan a favor de: " +
       nombreLinea;
 
+// Guardar la elección final en Google Sheets
+const urlEleccion =
+  CONFIG.WEBHOOK_URL +
+  "?token=" + encodeURIComponent(token) +
+  "&eleccion=" + encodeURIComponent(nombreLinea);
+
+fetch(urlEleccion, {
+  method: "GET",
+  mode: "no-cors"
+});
+    
     resultado.scrollIntoView({
       behavior: "smooth",
       block: "center"
