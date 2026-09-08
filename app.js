@@ -316,7 +316,7 @@ function mostrarError(mensaje) {
 document.querySelectorAll(".boton-eleccion").forEach(function (boton) {
 
   boton.addEventListener("click", function () {
-
+const token = new URLSearchParams(window.location.search).get("token");
     const indice = Array.from(document.querySelectorAll(".boton-eleccion")).indexOf(boton);
 const titulos = document.querySelectorAll("h2");
 const nombreLinea = titulos[indice]?.textContent?.trim();
