@@ -37,24 +37,44 @@ document.addEventListener("DOMContentLoaded", async function () {
       "?token=" +
       encodeURIComponent(token);
 
-    const respuestaHttp = await fetch(url, {
-      method: "GET",
-      cache: "no-store"
-    });
+ let datos = null;
 
-    if (!respuestaHttp.ok) {
+const MAX_INTENTOS = 6;
+const ESPERA_MS = 2000;
+
+for (let intento = 1; intento <= MAX_INTENTOS; intento++) {
+
+  const respuestaHttp = await fetch(url, {
+    method: "GET",
+    cache: "no-store"
+  });
+
+  if (!respuestaHttp.ok) {
+    if (intento === MAX_INTENTOS) {
       throw new Error(
         "Error de conexión: " + respuestaHttp.status
       );
     }
+  } else {
 
-    const datos = await respuestaHttp.json();
+    datos = await respuestaHttp.json();
 
-    if (!datos.ok) {
+    if (datos.ok) {
+      break;
+    }
+
+    if (intento === MAX_INTENTOS) {
       throw new Error(
         datos.error || "No se pudieron recuperar los datos."
       );
     }
+  }
+
+  await new Promise(resolve =>
+    setTimeout(resolve, ESPERA_MS)
+  );
+}   
+  
 
     const respuestas = datos.respuesta || {};
 
