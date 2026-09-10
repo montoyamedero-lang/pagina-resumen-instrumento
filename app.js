@@ -59,9 +59,20 @@ for (let intento = 1; intento <= MAX_INTENTOS; intento++) {
 
     datos = await respuestaHttp.json();
 
-    if (datos.ok) {
-      break;
-    }
+    if (datos.ok && datos.respuesta) {
+
+  const respuestasCompletas = Object.entries(datos.respuesta)
+    .filter(([id, campo]) =>
+      !id.startsWith("__") &&
+      campo &&
+      typeof campo === "object" &&
+      String(campo.valor || "").trim() !== ""
+    );
+
+  if (respuestasCompletas.length >= 6) {
+    break;
+  }
+}
 
     if (intento === MAX_INTENTOS) {
       throw new Error(
