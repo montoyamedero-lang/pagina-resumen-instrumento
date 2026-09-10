@@ -33,6 +33,22 @@
       font-size: 20px;
       line-height: 1.6;
     }
+
+    button {
+      margin-top: 25px;
+      padding: 15px 30px;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      background: #2563eb;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
   </style>
 </head>
 
@@ -47,8 +63,7 @@
     </p>
 
     <p>
-      Para realizar el instrumento debes acceder mediante
-      el enlace correspondiente al cuestionario.
+      Pulsa el botón para comenzar el instrumento.
     </p>
 
     <p>
@@ -56,7 +71,32 @@
       el resumen personalizado de tus resultados.
     </p>
 
+    <button type="button" onclick="comenzarInstrumento()">
+      Comenzar
+    </button>
+
   </div>
 
+  <script>
+    function comenzarInstrumento() {
+
+      let token;
+
+      if (window.crypto && crypto.randomUUID) {
+        token = crypto.randomUUID();
+      } else {
+        token =
+          Date.now().toString(36) +
+          Math.random().toString(36).substring(2);
+      }
+
+      const urlTypeform =
+        "https://form.typeform.com/to/Gq9GbDSd#token=" +
+        encodeURIComponent(token);
+
+      window.location.href = urlTypeform;
+    }
+  </script>
+
 </body>
-</html>
+</html> 
