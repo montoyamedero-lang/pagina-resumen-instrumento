@@ -28,7 +28,19 @@ document.addEventListener("DOMContentLoaded", async function () {
   }
 
   try {
+const avisoCarga = document.createElement("div");
+avisoCarga.id = "aviso-carga";
+avisoCarga.textContent =
+  "Estamos preparando tus elecciones… espera unos segundos.";
 
+avisoCarga.style.maxWidth = "900px";
+avisoCarga.style.margin = "20px auto";
+avisoCarga.style.padding = "16px";
+avisoCarga.style.textAlign = "center";
+avisoCarga.style.fontSize = "20px";
+avisoCarga.style.fontWeight = "600";
+
+document.body.prepend(avisoCarga);
     // =======================================================
     // 3. CONSULTAR APPS SCRIPT CON EL TOKEN
     // =======================================================
@@ -198,6 +210,7 @@ for (let intento = 1; intento <= MAX_INTENTOS; intento++) {
       imagenB,
       emoticonB
     );
+    avisoCarga.remove();
 
     console.log(
       "Datos cargados correctamente:",
