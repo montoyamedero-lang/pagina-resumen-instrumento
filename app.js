@@ -390,9 +390,9 @@ const nombreLinea = titulos[indice]?.textContent?.trim();
       document.body.appendChild(resultado);
     }
 
-    resultado.textContent =
-      "Las inteligencias utilizadas estan a favor de: " +
-      nombreLinea;
+   resultado.textContent =
+  "La línea con la que mostraste mayor afinidad intuitiva es: " +
+  nombreLinea;
 
 // Guardar la elección final en Google Sheets
 const urlEleccion =
