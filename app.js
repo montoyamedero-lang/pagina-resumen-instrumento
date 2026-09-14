@@ -391,19 +391,37 @@ const nombreLinea = titulos[indice]?.textContent?.trim();
     }
 
    resultado.textContent =
-  "La línea con la que mostraste mayor afinidad intuitiva es: " +
+  "La línea con la que sentiste mayor afinidad intuitiva es: " +
   nombreLinea;
 
-// Guardar la elección final en Google Sheets
-const urlEleccion =
-  CONFIG.WEBHOOK_URL +
-  "?token=" + encodeURIComponent(token) +
-  "&eleccion=" + encodeURIComponent(nombreLinea);
+// Crear botón para confirmar definitivamente la elección
+let botonConfirmar = document.getElementById("boton-confirmar-eleccion");
 
-fetch(urlEleccion, {
-  method: "GET",
-  mode: "no-cors"
+if (!botonConfirmar) {
+  botonConfirmar = document.createElement("button");
+  botonConfirmar.id = "boton-confirmar-eleccion";
+  botonConfirmar.textContent = "Confirmar mi elección";
+  botonConfirmar.style.display = "block";
+  botonConfirmar.style.margin = "20px auto";
+  resultado.insertAdjacentElement("afterend", botonConfirmar);
+}
+
+botonConfirmar.onclick = function () {
+  const urlEleccion =
+    CONFIG.WEBHOOK_URL +
+    "?token=" + encodeURIComponent(token) +
+    "&eleccion=" + encodeURIComponent(nombreLinea);
+
+  fetch(urlEleccion, {
+    method: "GET",
+    mode: "no-cors"
+  });
+document.querySelectorAll(".boton-eleccion").forEach(function (boton) {
+  boton.disabled = true;
 });
+  botonConfirmar.textContent = "Elección confirmada";
+  botonConfirmar.disabled = true;
+};
     
     resultado.scrollIntoView({
       behavior: "smooth",
