@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 const avisoCarga = document.createElement("div");
 avisoCarga.id = "aviso-carga";
 avisoCarga.textContent =
-  "Estamos preparando tus elecciones… espera unos segundos.";
+"Estamos preparando tus elecciones… Este proceso puede tardar entre 10 y 15 segundos.";
 
 avisoCarga.style.maxWidth = "900px";
 avisoCarga.style.margin = "20px auto";
