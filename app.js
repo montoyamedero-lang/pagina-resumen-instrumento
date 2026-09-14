@@ -400,9 +400,17 @@ let botonConfirmar = document.getElementById("boton-confirmar-eleccion");
 if (!botonConfirmar) {
   botonConfirmar = document.createElement("button");
   botonConfirmar.id = "boton-confirmar-eleccion";
-  botonConfirmar.textContent = "Confirmar mi elección";
-  botonConfirmar.style.display = "block";
-  botonConfirmar.style.margin = "20px auto";
+botonConfirmar.textContent = "Confirmar mi elección";
+botonConfirmar.style.display = "block";
+botonConfirmar.style.margin = "24px auto";
+botonConfirmar.style.padding = "14px 28px";
+botonConfirmar.style.fontSize = "18px";
+botonConfirmar.style.fontWeight = "700";
+botonConfirmar.style.cursor = "pointer";
+  botonConfirmar.style.backgroundColor = "#2563eb";
+botonConfirmar.style.color = "#ffffff";
+botonConfirmar.style.border = "none";
+botonConfirmar.style.borderRadius = "10px";
   resultado.insertAdjacentElement("afterend", botonConfirmar);
 }
 
@@ -419,8 +427,14 @@ botonConfirmar.onclick = function () {
 document.querySelectorAll(".boton-eleccion").forEach(function (boton) {
   boton.disabled = true;
 });
-  botonConfirmar.textContent = "Elección confirmada";
-  botonConfirmar.disabled = true;
+ botonConfirmar.textContent = "✓ Elección confirmada";
+botonConfirmar.disabled = true;
+botonConfirmar.style.fontSize = "18px";
+botonConfirmar.style.fontWeight = "700";
+botonConfirmar.style.cursor = "default";
+botonConfirmar.style.opacity = "1";
+botonConfirmar.style.backgroundColor = "#2563eb";
+botonConfirmar.style.color = "#ffffff";  
 };
     
     resultado.scrollIntoView({
