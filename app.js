@@ -460,7 +460,7 @@ mensajeFinal.style.borderRadius = "16px";
 mensajeFinal.style.textAlign = "center";
 mensajeFinal.style.lineHeight = "1.6";
 
-resultado.insertAdjacentElement("afterend", mensajeFinal); 
+botonConfirmar.insertAdjacentElement("afterend", mensajeFinal);
     resultado.scrollIntoView({
       behavior: "smooth",
       block: "center"
