@@ -436,7 +436,31 @@ botonConfirmar.style.opacity = "1";
 botonConfirmar.style.backgroundColor = "#2563eb";
 botonConfirmar.style.color = "#ffffff";  
 };
-    
+   const mensajeFinal = document.createElement("div");
+mensajeFinal.innerHTML = `
+  <h2>Has identificado la línea de investigación con la que sientes mayor afinidad intuitiva.</h2>
+
+  <p>Ahora es momento de someter esta elección al análisis racional.</p>
+
+  <p>En el siguiente y último paso, examinarás la línea seleccionada desde preguntas concretas como:</p>
+
+  <p><strong>¿Qué?, ¿cómo?, ¿cuánto?, ¿dónde?, ¿con qué? y ¿para qué?</strong></p>
+
+  <p>Este análisis te permitirá contrastar tu elección intuitiva con sus posibilidades reales de investigación y avanzar hacia una <strong>definición clara de la línea de investigación sobre la cual trabajarás.</strong></p>
+
+  <p><strong>Este proceso continuará en el próximo video de esta secuencia, donde encontrarás el enlace al siguiente y último instrumento.</strong></p>
+`;
+
+mensajeFinal.style.maxWidth = "900px";
+mensajeFinal.style.margin = "35px auto";
+mensajeFinal.style.padding = "28px";
+mensajeFinal.style.backgroundColor = "#ffffff";
+mensajeFinal.style.border = "2px solid #2563eb";
+mensajeFinal.style.borderRadius = "16px";
+mensajeFinal.style.textAlign = "center";
+mensajeFinal.style.lineHeight = "1.6";
+
+resultado.insertAdjacentElement("afterend", mensajeFinal); 
     resultado.scrollIntoView({
       behavior: "smooth",
       block: "center"
