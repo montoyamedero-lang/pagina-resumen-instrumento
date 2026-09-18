@@ -108,7 +108,7 @@ body {
 .bloque-visual h3 {
   margin: 0 0 12px;
   color: var(--texto-suave);
-  font-size: 15px;
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 0.07em;
 }
