@@ -115,7 +115,7 @@ body {
 
 .imagen-eleccion {
   display: block;
-  width: 85%;
+  width: 75%;
   height: 245px;
   object-fit: cover;
   border-radius: 18px;
